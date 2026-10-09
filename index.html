@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CATCHAN | $CATCHAN</title>
+  <meta name="description" content="CATCHAN is the ultimate crypto cat, clawing through the charts, chasing green candles, and ruling meme season." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" href="logo.jpg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@500&family=Orbitron:wght@500;700;800&family=Sora:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            display: ["Orbitron", "sans-serif"],
+            body: ["Sora", "sans-serif"],
+            mono: ["JetBrains Mono", "ui-monospace", "monospace"],
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html {
+      color-scheme: dark;
+      background: #000 url("banner.jpg") center / cover no-repeat fixed;
+    }
+    body {
+      background: transparent;
+    }
+    ::selection {
+      background: #fff;
+      color: #000;
+    }
+    ::-webkit-scrollbar {
+      width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #000;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: rgba(255, 255, 255, 0.35);
+    }
+    .text-glow {
+      text-shadow:
+        0 0 12px rgba(255, 255, 255, 0.85),
+        0 0 42px rgba(255, 255, 255, 0.35);
+    }
+    .hud {
+      background:
+        linear-gradient(#fff, #fff) left top / 16px 2px no-repeat,
+        linear-gradient(#fff, #fff) left top / 2px 16px no-repeat,
+        linear-gradient(#fff, #fff) right top / 16px 2px no-repeat,
+        linear-gradient(#fff, #fff) right top / 2px 16px no-repeat,
+        linear-gradient(#fff, #fff) left bottom / 16px 2px no-repeat,
+        linear-gradient(#fff, #fff) left bottom / 2px 16px no-repeat,
+        linear-gradient(#fff, #fff) right bottom / 16px 2px no-repeat,
+        linear-gradient(#fff, #fff) right bottom / 2px 16px no-repeat,
+        rgba(0, 0, 0, 0.62);
+      backdrop-filter: blur(16px);
+    }
+    @keyframes rise {
+      from { opacity: 0; transform: translateY(18px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .rise { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+    @keyframes ticker {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+    .marquee { animation: ticker 32s linear infinite; }
+    .marquee:hover { animation-play-state: paused; }
+    @media (prefers-reduced-motion: reduce) {
+      .rise, .marquee { animation: none; }
+    }
+  </style>
+</head>
+<body class="font-body text-white antialiased">
+  <div class="pointer-events-none fixed inset-0 z-0 bg-[radial-gradient(ellipse_at_center,rgba(0,0,0,0.78)_0%,rgba(0,0,0,0.5)_48%,rgba(0,0,0,0.82)_100%)]"></div>
+
+  <div class="relative z-10 pb-24 md:pb-0">
+    <header class="sticky top-0 z-50 border-b border-white/10 bg-black/70 backdrop-blur-md">
+      <div class="mx-auto flex h-[4.5rem] max-w-6xl items-center justify-between gap-4 px-5">
+        <a href="#top" class="flex items-center gap-3">
+          <img src="logo.jpg" alt="CATCHAN" class="h-11 w-11 object-cover mix-blend-screen" />
+          <span class="font-display text-sm font-bold tracking-[0.28em]">CATCHAN</span>
+        </a>
+        <nav class="hidden items-center gap-8 text-xs font-medium tracking-[0.22em] text-white/70 md:flex" aria-label="Primary">
+          <a href="#about" class="transition hover:text-white">ABOUT</a>
+          <a href="#buy" class="transition hover:text-white">HOW TO BUY</a>
+          <a href="#chart" class="transition hover:text-white">CHART</a>
+        </nav>
+        <div class="flex items-center gap-2.5">
+          <a href="https://t.me/CATCHANsol" target="_blank" rel="noopener noreferrer" aria-label="Telegram" class="transition hover:scale-105">
+            <img src="tg.png" alt="" class="h-9 w-9 rounded-full" />
+          </a>
+          <a href="https://x.com/CATCHANsol" target="_blank" rel="noopener noreferrer" aria-label="X" class="transition hover:scale-105">
+            <img src="x.png" alt="" class="h-9 w-9" />
+          </a>
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=TBA" target="_blank" rel="noopener noreferrer" class="hidden bg-white px-4 py-2 font-display text-[10px] font-bold tracking-[0.22em] text-black transition hover:shadow-[0_0_24px_rgba(255,255,255,0.55)] sm:inline-flex">BUY NOW</a>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="mx-auto flex min-h-[calc(100vh-4.5rem)] max-w-4xl flex-col items-center justify-center px-5 py-16 text-center">
+        <img src="logo.jpg" alt="" class="rise h-40 w-40 object-cover mix-blend-screen drop-shadow-[0_0_28px_rgba(255,255,255,0.65)] sm:h-48 sm:w-48" />
+        <p class="rise mt-2 font-mono text-[11px] tracking-[0.42em] text-white/60" style="animation-delay: 80ms">/c/ · SOLANA · $CATCHAN</p>
+        <h1 class="rise mt-5 font-display text-5xl font-extrabold tracking-[0.18em] text-glow sm:text-7xl md:text-8xl" style="animation-delay: 140ms">
+          <span class="text-white/45" aria-hidden="true">/</span>CATCHAN<span class="text-white/45" aria-hidden="true">/</span>
+        </h1>
+        <p class="rise mt-6 max-w-2xl text-base leading-relaxed text-white/80 sm:text-lg" style="animation-delay: 220ms">
+          CATCHAN is the ultimate crypto cat, clawing through the charts, chasing green candles, and ruling meme season!
+        </p>
+
+        <div class="rise mt-8 grid w-full max-w-xl grid-cols-3 gap-px bg-white/15 text-left" style="animation-delay: 280ms">
+          <div class="bg-black/70 px-4 py-3">
+            <p class="font-mono text-[10px] tracking-[0.22em] text-white/45">NAME</p>
+            <p class="mt-1 font-display text-sm tracking-widest">CATCHAN</p>
+          </div>
+          <div class="bg-black/70 px-4 py-3">
+            <p class="font-mono text-[10px] tracking-[0.22em] text-white/45">SYMBOL</p>
+            <p class="mt-1 font-display text-sm tracking-widest">CATCHAN</p>
+          </div>
+          <div class="bg-black/70 px-4 py-3">
+            <p class="font-mono text-[10px] tracking-[0.22em] text-white/45">CHAIN</p>
+            <p class="mt-1 font-display text-sm tracking-widest">SOLANA</p>
+          </div>
+        </div>
+
+        <div class="rise mt-4 flex w-full max-w-xl items-center gap-3 border border-white/20 bg-black/70 px-4 py-3 text-left backdrop-blur-md" style="animation-delay: 340ms">
+          <span class="shrink-0 font-display text-[10px] tracking-[0.28em] text-white/50">CA</span>
+          <code id="ca" class="js-ca min-w-0 flex-1 truncate font-mono text-sm tracking-wide">TBA</code>
+          <button type="button" data-copy class="shrink-0 border border-white/30 px-3 py-1.5 font-display text-[10px] tracking-[0.22em] transition hover:bg-white hover:text-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white">
+            <span data-copy-label>COPY</span>
+          </button>
+        </div>
+        <p id="copy-status" class="sr-only" aria-live="polite"></p>
+
+        <div class="rise mt-6 flex w-full max-w-xl flex-col gap-3 sm:flex-row" style="animation-delay: 400ms">
+          <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=TBA" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center bg-white px-8 py-3.5 font-display text-xs font-bold tracking-[0.24em] text-black transition hover:shadow-[0_0_32px_rgba(255,255,255,0.5)]">BUY NOW</a>
+          <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center border border-white/40 px-8 py-3.5 font-display text-xs font-bold tracking-[0.24em] transition hover:bg-white hover:text-black">CHART</a>
+        </div>
+      </section>
+
+      <div class="overflow-hidden border-y border-white/10 bg-black/55">
+        <div class="marquee flex w-max whitespace-nowrap py-3 font-display text-[11px] tracking-[0.34em] text-white/75">
+          <span class="px-4">$CATCHAN · THE ULTIMATE CRYPTO CAT · CLAWING THROUGH THE CHARTS · CHASING GREEN CANDLES · RULING MEME SEASON · SOLANA ·</span>
+          <span class="px-4" aria-hidden="true">$CATCHAN · THE ULTIMATE CRYPTO CAT · CLAWING THROUGH THE CHARTS · CHASING GREEN CANDLES · RULING MEME SEASON · SOLANA ·</span>
+        </div>
+      </div>
+
+      <section id="about" class="relative mx-auto max-w-6xl overflow-hidden px-5 py-24">
+        <img src="logo.jpg" alt="" class="pointer-events-none absolute left-1/2 top-1/2 w-[min(90vw,640px)] -translate-x-1/2 -translate-y-1/2 opacity-25 mix-blend-screen" />
+        <div class="relative">
+          <p class="font-mono text-[11px] tracking-[0.4em] text-white/50">/ ABOUT /</p>
+          <h2 class="mt-3 max-w-3xl font-display text-3xl font-bold leading-tight tracking-wide text-glow sm:text-5xl">The cat that hunts the chart.</h2>
+          <blockquote class="mt-8 max-w-3xl border-l-2 border-white pl-5 text-lg leading-relaxed text-white/85 sm:text-xl">
+            CATCHAN is the ultimate crypto cat, clawing through the charts, chasing green candles, and ruling meme season!
+          </blockquote>
+          <div class="mt-12 grid gap-4 md:grid-cols-3">
+            <article class="hud p-6">
+              <p class="font-display text-xs tracking-[0.28em] text-white/45">01</p>
+              <h3 class="mt-4 font-display text-lg tracking-wide">Claw the charts</h3>
+              <p class="mt-3 text-sm leading-relaxed text-white/70">CATCHAN does not sit and watch. It climbs every wick, scratches through resistance, and leaves paw prints on the candles.</p>
+            </article>
+            <article class="hud p-6">
+              <p class="font-display text-xs tracking-[0.28em] text-white/45">02</p>
+              <h3 class="mt-4 font-display text-lg tracking-wide">Chase green candles</h3>
+              <p class="mt-3 text-sm leading-relaxed text-white/70">Green candles are the mice. Solana is the alley. $CATCHAN is already mid-pounce, hunting the next run.</p>
+            </article>
+            <article class="hud p-6">
+              <p class="font-display text-xs tracking-[0.28em] text-white/45">03</p>
+              <h3 class="mt-4 font-display text-lg tracking-wide">Rule meme season</h3>
+              <p class="mt-3 text-sm leading-relaxed text-white/70">One name. One symbol. CATCHAN on Solana, built to sit on the throne when meme season turns loud.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="buy" class="border-y border-white/10 bg-black/55">
+        <div class="mx-auto max-w-6xl px-5 py-24">
+          <p class="font-mono text-[11px] tracking-[0.4em] text-white/50">/ HOW TO BUY /</p>
+          <h2 class="mt-3 font-display text-3xl font-bold tracking-wide text-glow sm:text-5xl">Buy $CATCHAN on Solana</h2>
+          <p class="mt-4 max-w-2xl text-white/70">Four steps. Wallet, SOL, contract, swap. Then you are in the hunt with the ultimate crypto cat.</p>
+
+          <ol class="mt-12 grid gap-4 md:grid-cols-4">
+            <li class="group hud p-6">
+              <p class="font-display text-4xl text-white/25 transition group-hover:text-white group-hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.85)]">01</p>
+              <h3 class="mt-5 font-display text-base tracking-wide">Get a wallet</h3>
+              <p class="mt-3 text-sm leading-relaxed text-white/70">Install Phantom or Solflare and create a Solana wallet. Write the recovery phrase down and keep it offline.</p>
+            </li>
+            <li class="group hud p-6">
+              <p class="font-display text-4xl text-white/25 transition group-hover:text-white group-hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.85)]">02</p>
+              <h3 class="mt-5 font-display text-base tracking-wide">Load SOL</h3>
+              <p class="mt-3 text-sm leading-relaxed text-white/70">Send SOL to that wallet. You swap SOL for $CATCHAN, and a little extra SOL covers the network fee.</p>
+            </li>
+            <li class="group hud p-6">
+              <p class="font-display text-4xl text-white/25 transition group-hover:text-white group-hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.85)]">03</p>
+              <h3 class="mt-5 font-display text-base tracking-wide">Copy the CA</h3>
+              <p class="mt-3 text-sm leading-relaxed text-white/70">Copy the contract address so you buy the real CATCHAN. Paste it into the swap if the token is not already selected.</p>
+              <button type="button" data-copy class="mt-4 border border-white/30 px-3 py-1.5 font-display text-[10px] tracking-[0.2em] transition hover:bg-white hover:text-black">
+                <span data-copy-label>COPY CA</span>
+              </button>
+            </li>
+            <li class="group hud p-6">
+              <p class="font-display text-4xl text-white/25 transition group-hover:text-white group-hover:drop-shadow-[0_0_14px_rgba(255,255,255,0.85)]">04</p>
+              <h3 class="mt-5 font-display text-base tracking-wide">Swap for $CATCHAN</h3>
+              <p class="mt-3 text-sm leading-relaxed text-white/70">Open Buy Now. Set how much SOL to spend, confirm you are receiving $CATCHAN, and approve the swap in your wallet.</p>
+            </li>
+          </ol>
+
+          <div class="mt-10 flex flex-col gap-3 sm:flex-row">
+            <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=TBA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center bg-white px-8 py-3.5 font-display text-xs font-bold tracking-[0.24em] text-black transition hover:shadow-[0_0_32px_rgba(255,255,255,0.5)]">BUY NOW</a>
+            <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center border border-white/40 px-8 py-3.5 font-display text-xs font-bold tracking-[0.24em] transition hover:bg-white hover:text-black">CHART</a>
+          </div>
+        </div>
+      </section>
+
+      <section id="chart" class="mx-auto max-w-6xl px-5 py-24">
+        <div class="flex flex-col justify-between gap-6 sm:flex-row sm:items-end">
+          <div>
+            <p class="font-mono text-[11px] tracking-[0.4em] text-white/50">/ CHART /</p>
+            <h2 class="mt-3 font-display text-3xl font-bold tracking-wide text-glow sm:text-5xl">Clawing through the candles</h2>
+            <p class="mt-4 max-w-xl text-white/70">Watch $CATCHAN live. The ultimate crypto cat is on the chart, chasing green candles in real time.</p>
+          </div>
+          <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="inline-flex shrink-0 items-center justify-center border border-white/40 px-8 py-3.5 font-display text-xs font-bold tracking-[0.24em] transition hover:bg-white hover:text-black">OPEN CHART</a>
+        </div>
+        <div class="hud mt-10 overflow-hidden">
+          <iframe
+            src="https://dexscreener.com/solana/TBA?embed=1&amp;theme=dark&amp;trades=0&amp;info=0"
+            class="h-[480px] w-full bg-black sm:h-[640px]"
+            title="Dexscreener chart for CATCHAN"
+            loading="lazy"
+          ></iframe>
+        </div>
+      </section>
+
+      <section id="community" class="border-t border-white/10 bg-black/55">
+        <div class="mx-auto max-w-6xl px-5 py-24">
+          <p class="font-mono text-[11px] tracking-[0.4em] text-white/50">/ THE PACK /</p>
+          <h2 class="mt-3 font-display text-3xl font-bold tracking-wide text-glow sm:text-5xl">Come rule meme season.</h2>
+          <p class="mt-4 max-w-xl text-white/70">CATCHAN is the ultimate crypto cat. Claw the charts with the pack on Telegram and X.</p>
+          <div class="mt-10 grid gap-4 sm:grid-cols-2">
+            <a href="https://t.me/CATCHANsol" target="_blank" rel="noopener noreferrer" class="hud flex items-center gap-4 p-5 transition hover:bg-white/10">
+              <img src="tg.png" alt="" class="h-14 w-14 rounded-full" />
+              <span>
+                <span class="block font-mono text-[10px] tracking-[0.28em] text-white/45">TELEGRAM</span>
+                <span class="mt-1 block font-display tracking-wide">t.me/CATCHANsol</span>
+              </span>
+            </a>
+            <a href="https://x.com/CATCHANsol" target="_blank" rel="noopener noreferrer" class="hud flex items-center gap-4 p-5 transition hover:bg-white/10">
+              <img src="x.png" alt="" class="h-14 w-14" />
+              <span>
+                <span class="block font-mono text-[10px] tracking-[0.28em] text-white/45">X</span>
+                <span class="mt-1 block font-display tracking-wide">x.com/CATCHANsol</span>
+              </span>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="border-t border-white/10">
+      <div class="mx-auto flex max-w-6xl flex-col items-start justify-between gap-6 px-5 py-10 sm:flex-row sm:items-center">
+        <div class="flex items-center gap-3">
+          <img src="logo.jpg" alt="" class="h-10 w-10 object-cover mix-blend-screen" />
+          <div>
+            <p class="font-display text-sm tracking-[0.28em]">CATCHAN</p>
+            <p class="mt-1 text-xs text-white/50">The ultimate crypto cat.</p>
+          </div>
+        </div>
+        <p class="max-w-md text-xs leading-relaxed text-white/40">$CATCHAN is a meme coin on Solana. Prices move fast. Trade only what you can afford to lose.</p>
+      </div>
+    </footer>
+  </div>
+
+  <div class="fixed inset-x-0 bottom-0 z-50 flex gap-2 border-t border-white/15 bg-black/85 p-3 backdrop-blur md:hidden">
+    <a href="https://swap.pump.fun/?input=So11111111111111111111111111111111111111112&amp;output=TBA" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center bg-white py-3 font-display text-[11px] font-bold tracking-[0.2em] text-black">BUY NOW</a>
+    <a href="https://dexscreener.com/solana/TBA" target="_blank" rel="noopener noreferrer" class="inline-flex flex-1 items-center justify-center border border-white/40 py-3 font-display text-[11px] font-bold tracking-[0.2em]">CHART</a>
+  </div>
+
+  <script>
+    const contract = document.querySelector(".js-ca").textContent.trim();
+
+    document.querySelectorAll("[data-copy]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(contract);
+        } catch (error) {
+          const field = document.createElement("textarea");
+          field.value = contract;
+          field.setAttribute("readonly", "");
+          field.style.position = "fixed";
+          field.style.left = "-9999px";
+          document.body.appendChild(field);
+          field.select();
+          document.execCommand("copy");
+          field.remove();
+        }
+        const label = button.querySelector("[data-copy-label]");
+        const original = label.textContent;
+        label.textContent = "COPIED";
+        document.getElementById("copy-status").textContent = "Contract address copied";
+        window.setTimeout(() => {
+          label.textContent = original;
+        }, 1600);
+      });
+    });
+  </script>
+</body>
+</html>
